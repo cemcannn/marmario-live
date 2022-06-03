@@ -1,0 +1,61 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- contact section -->
+<section class="contact_section  ">
+  <div class="container">
+    <div class="heading_container">
+      <h2>
+        Contact Us
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">
+          {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="form_container">
+          <form action="" method="POST">
+            {% csrf_token %}
+            <div>
+              {{form.first_name}}
+            </div>
+            <div>
+              {{form.last_name}}
+            </div>
+            <div>
+              {{form.email}}
+            </div>
+            <div>
+              {{form.phone}}
+            </div>
+            <div>
+              {{form.message}}
+            </div>
+            <div class="btn_box mt-4">
+              <button type="submit">
+                SEND
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="map_container">
+          <div class="map">
+            <div id="{% static 'googleMap' %}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end contact section -->
+
+{% endblock %}

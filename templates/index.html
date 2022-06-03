@@ -1,0 +1,226 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- slider section -->
+
+<section class="slider_section ">
+  <div class="slider_bg_box">
+    <div class="bg_img_box">
+      <img style=" width: 100%;" src="{% static 'images/6.jpg' %}" alt="">
+    </div>
+  </div>
+  <div id="customCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-7 mx-auto">
+              <div class="detail-box">
+                <h1>
+                  Floor Design
+                </h1>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo
+                  maxime voluptatem a itaque suscipit.
+                </p>
+                <a href="{% url 'contact'%}" class="btn1">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-7 mx-auto">
+              <div class="detail-box">
+                <h1>
+                  Wall Design
+                </h1>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo
+                  maxime voluptatem a itaque suscipit.
+                </p>
+                <a href="{% url 'contact'%}" class="btn1">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-7 mx-auto">
+              <div class="detail-box">
+                <h1>
+                  Bath Design
+                </h1>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo
+                  maxime voluptatem a itaque suscipit.
+                </p>
+                <a href="{% url 'contact'%}" class="btn1">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="carousel-indicators">
+      <li data-target="#customCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#customCarousel" data-slide-to="1"></li>
+      <li data-target="#customCarousel" data-slide-to="2"></li>
+    </ol>
+  </div>
+</section>
+
+<!-- end slider section -->
+
+<!-- service section -->
+
+<section class="service_section layout_padding ">
+  <div class="container">
+    <div class="heading_container heading_center ">
+      <h2>
+        Usage Areas
+      </h2>
+    </div>
+    <div class="row">
+      <div class="card-group">
+        <div class="card">
+          <img src="{% static 'images/m4.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Floor Design</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/m2.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Wall Design</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/m5.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Bath Design</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end service section -->
+
+<!-- portfolio section -->
+
+<section class="portfolio_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Our Portfolio
+      </h2>
+    </div>
+    <ul class="filters_menu">
+      <li class="active" data-filter="*">All</li>
+      <li data-filter=".residential">Residential</li>
+      <li data-filter=".office">Office</li>
+      <li data-filter=".commercial">Commercial</li>
+    </ul>
+    <div class="filters-content">
+      <div class="row grid">
+        {% for product in products %}
+        <div class="col-sm-6 col-md-4 all residential" >
+          <div class="box" >
+            <img src="{{product.image.url}}" alt="" style="border-top-left-radius: 5%; border-top-right-radius: 5%;">
+            <div style="background-color:black; height: 1cm; border-bottom-left-radius: 5%; border-bottom-right-radius: 5%;">
+              <h5 style="text-align: center;">{{product.name}}</h5>
+            </div>
+            <a href="" title="{{product.name}}"></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end portfolio section -->
+
+<!-- about section -->
+
+<section class="about_section about_section1 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>
+              About Us
+            </h2>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem eum consequuntur ipsam repellat
+            dolor soluta aliquid laborum, eius odit consectetur vel quasi in quidem, eveniet ab est corporis tempore.
+          </p>
+          <a href="{% url 'about' %}">
+            Read More
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="{% static 'images/about-us.jpg' %}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end about section -->
+
+<!-- about section -->
+
+<section class="about_section about_section2 layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="{% static 'images/m1.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>
+              We Contribute Marble<br>
+              for Your Dream House
+            </h2>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem eum consequuntur ipsam repellat
+            dolor soluta aliquid laborum, eius odit consectetur vel quasi in quidem, eveniet ab est corporis tempore.
+          </p>
+          <a href="">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end about section -->
+
+{% endblock %}
